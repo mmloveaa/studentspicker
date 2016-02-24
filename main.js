@@ -6,6 +6,7 @@ var randomDiv = document.getElementById("randomStudent")
 var p = document.createElement('h1')
 var randomizedArr=[];
 var groupByNum = document.getElementById("groupNum")
+var randN = list.getElementsByTagName("li");
 
 document.addEventListener('DOMContentLoaded',init);
 
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded',init);
 			// console.log(getName.split(","))
 
 			getName=(getName.split(","))
-			// console.log("after split", getName)
+			console.log("after split", getName)
 
 			getName.forEach(function(e){
 				// console.log(e)
@@ -40,8 +41,7 @@ document.addEventListener('DOMContentLoaded',init);
 
 
 		document.querySelector('#randomButton').addEventListener('click', function(){
-				var randN = list.getElementsByTagName("li");
-				// console.log("randN", randN)
+				
 				// console.log(randN[Math.floor(Math.random()*randN.length)]);
 				var randomPerson =randN[Math.floor(Math.random()*randN.length)];
 				// console.log("random Person", randomPerson.innerHTML)
@@ -54,6 +54,39 @@ document.addEventListener('DOMContentLoaded',init);
 		document.querySelector("#groupButton").addEventListener('click', function(){
 			console.log("It is clicking!")
 			console.log("groupByNum", groupByNum.value)
+			
+			var justName = randN[i].textContent;
+				console.log("randN", justName)
+			for ( var i=0 ; i<randN.length; i++ ){
+				justName = randN[i].textContent;
+			}
+			
+
+			// function shuffle(randN) {
+			//   var m = randN.length;
+			//   var t;
+			//   var i;
+			//   console.log("m", m)
+			//   console.log("t", t)
+			//   console.log("i", i)
+
+			//   // While there remain elements to shuffle…
+			//   while (m<randN.length-1) {
+			//   	console.log("Is this working?")
+			//     // Pick a remaining element…
+			//     i = Math.floor(Math.random() * m--);
+
+			//     // And swap it with the current element.
+			//     t = randN[m];
+			//     randN[m] = randN[i];
+			//     randN[i] = t;
+			//   }
+
+			//   return randN;
+			//   console.log("randN", randN)
+			// }
+
+			// shuffle()
 				
 		});
 		
